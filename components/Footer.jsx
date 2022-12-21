@@ -7,10 +7,10 @@ const Footer = () => {
       fontSize="lg"
       color="gray.600"
       borderTop="1px"
-      bordercolor="gray.600"
+      bordercolor="gray.300"
       p="5"
     >
-      2022&copy; Realter, Inc.
+      &copy;2022 Realter, Inc.
     </Box>
   );
 };
