@@ -27,15 +27,18 @@ const Property = ({
       <Link href={`/property/${externalID}`} passHref>
         <Flex
           flexWrap="wrap"
-          flexGrow={1}
-          w="420px"
+          //   flexGrow={1}
+          w="380px"
           p="5"
           border="1px solid red"
           paddingTop="0"
           justifyContent="flex-start"
           m="5"
         >
-          <Box border="1px solid blue" width="100">
+          <Box
+            //   border="1px solid blue"
+            width="100"
+          >
             <Image
               src={coverPhoto ? coverPhoto.url : DefaultImage}
               alt="house"
@@ -46,12 +49,13 @@ const Property = ({
           <Box w="100%">
             <Flex
               paddingTop="2"
-              border="1px solid green"
+              //   border="1px solid green"
+              marginTop="1"
               alignItems="center"
               justifyContent="space-between"
             >
               <Flex alignItems="center" justifyContent="center">
-                <Box paddingRight="3" color="green" marginTop="3">
+                <Box paddingRight="1" color="green.400">
                   {isVerified && <GoVerified />}
                 </Box>
                 <Text fontWeight="bold" fontSize="lg">
@@ -60,13 +64,27 @@ const Property = ({
                 </Text>
               </Flex>
               <Box>
-                <Avatar size="sm" src={agency?.logo?.url} width={100} />
+                <Avatar
+                  size="md"
+                  border="1px solid black"
+                  //   padding="2px"
+                  src={agency?.logo?.url}
+                  width={50}
+                />
               </Box>
             </Flex>
-            <Flex alignItems="center" justifyContent="space-between" w="250px">
+            <Flex
+              alignItems="center"
+              justifyContent="space-between"
+              w="250px"
+              //   border="1px solid green"
+              marginTop={1}
+              //   width="full"
+              color="blue.500"
+            >
               {rooms}
-              <FaBed />| {baths} <FaBath /> | {millify(area)} sqft{" "}
-              <BsGridFill />
+              <FaBed /> {baths} <FaBath />
+              {millify(area)} sqft <BsGridFill />
             </Flex>
             <Text fontSize="lg">
               {title.length > 30 ? `${title.substring(0, 30)}...` : title}

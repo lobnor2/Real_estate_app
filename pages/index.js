@@ -15,7 +15,13 @@ export const Banner = ({
   linkName,
   imageUrl,
 }) => (
-  <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
+  <Flex
+    flexWrap="wrap"
+    justifyContent="center"
+    alignItems="center"
+    m="10"
+    border="1px solid red"
+  >
     <Image src={imageUrl} width={500} height={300} alt="banner" />
     <Box p="5">
       <Text color="gray.500" fontSize="sm" fontWeight="medium">
@@ -74,20 +80,22 @@ const Home = ({ propertiesForSale, propertiesForRent }) => {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       {/* Fetch the properties and map over them */}
-      {propertiesForSale.map((property) => (
-        <Property property={property} key={property.id} />
-      ))}
+      <Flex flexWrap="wrap">
+        {propertiesForSale.map((property) => (
+          <Property property={property} key={property.id} />
+        ))}
+      </Flex>
     </Box>
   );
 };
 export default Home;
 
 export async function getStaticProps() {
-  const propertyForSale = await fetchApi(
-    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
-  );
   const propertyForRent = await fetchApi(
-    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=12`
+  );
+  const propertyForSale = await fetchApi(
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=24`
   );
 
   return {
