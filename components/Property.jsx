@@ -34,6 +34,7 @@ const Property = ({
           paddingTop="0"
           justifyContent="flex-start"
           m="5"
+          cursor="pointer"
         >
           <Box
             //   border="1px solid blue"
