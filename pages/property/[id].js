@@ -25,8 +25,65 @@ const PropertyDetails = ({
     photos,
   },
 }) => (
-  <Box maxWidth="1000px" margin="auto" p="4">
+  <Box
+    maxWidth="1000px"
+    margin="auto"
+    p="4"
+    border="1px solid red"
+    marginBottom={2}
+  >
     {photos && <ImageScrollbar data={photos} />}
+    <Box w="full" p="6" border="1px solid red">
+      <Flex
+        paddingTop="2"
+        //   border="1px solid green"
+        marginTop="1"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Flex alignItems="center" justifyContent="center">
+          <Box paddingRight="1" color="green.400">
+            {isVerified && <GoVerified />}
+          </Box>
+          <Text fontWeight="bold" fontSize="lg">
+            AED {millify(price)}
+            {rentFrequency && `/${rentFrequency}`}
+          </Text>
+        </Flex>
+        <Box>
+          <Avatar
+            size="md"
+            border="1px solid black"
+            //   padding="2px"
+            src={agency?.logo?.url}
+            width={50}
+          />
+        </Box>
+      </Flex>
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        w="250px"
+        //   border="1px solid green"
+        marginTop={1}
+        //   width="full"
+        color="blue.500"
+      >
+        {rooms}
+        <FaBed /> {baths} <FaBath />
+        {millify(area)} sqft <BsGridFill />
+      </Flex>
+      <Box marginTop="2">
+        <Text fontSize="lg" marginBottom="2">
+          {title}
+        </Text>
+      </Box>
+      <Box>
+        <Text lineHeight="2" color="gray.500">
+          {description}
+        </Text>
+      </Box>
+    </Box>
   </Box>
 );
 
