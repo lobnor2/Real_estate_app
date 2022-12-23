@@ -83,6 +83,70 @@ const PropertyDetails = ({
           {description}
         </Text>
       </Box>
+      <Flex
+        flexWrap="wrap"
+        textTransform="uppercase"
+        justifyContent="space-between"
+      >
+        <Flex
+          justifyContent="space-between"
+          w="400px"
+          borderBottom="1px"
+          borderColor="gray.100"
+          p="3"
+        >
+          <Text>Type</Text>
+          <Text fontWeight="bold">{type}</Text>
+        </Flex>
+        <Flex
+          justifyContent="space-between"
+          w="400px"
+          borderBottom="1px"
+          borderColor="gray.100"
+          p="3"
+        >
+          <Text>Purpose</Text>
+          <Text fontWeight="bold">{purpose}</Text>
+        </Flex>
+        {furnishingStatus && (
+          <Flex
+            // border="1px solid blue"
+            justifyContent="space-between"
+            w="400px"
+            borderBottom="1px"
+            borderColor="gray.100"
+            p="3"
+          >
+            <Text>Furnishing Status</Text>
+            <Text fontWeight="bold">{furnishingStatus}</Text>
+          </Flex>
+        )}
+      </Flex>
+      <Box>
+        {amenities.length && (
+          <Text fontSize="2xl" fontWeight="bold" marginTop="5">
+            Aminities
+          </Text>
+        )}
+        <Flex flexWrap="wrap">
+          {amenities.map((item) =>
+            item.amenities.map((amenity) => (
+              <Text
+                key={amenity.text}
+                fontWeight="bold"
+                color="blue.400"
+                fontSize="lg"
+                p="2"
+                m="1"
+                borderRadius="5"
+                bg="gray.200"
+              >
+                {amenity.text}
+              </Text>
+            ))
+          )}
+        </Flex>
+      </Box>
     </Box>
   </Box>
 );
