@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   Router.events.on("routeChangeStart", () => {
     NProgress.start();
   });
-  Router.events.on("routeChangeDone", () => {
+  Router.events.on("routeChangeComplete", () => {
     NProgress.done();
   });
 
