@@ -23,6 +23,8 @@ const PropertyDetails = ({
     furnishingStatus,
     amenities,
     photos,
+    phoneNumber: { mobile, phone, whatsapp },
+    contactName,
   },
 }) => (
   <Box
@@ -146,6 +148,13 @@ const PropertyDetails = ({
             ))
           )}
         </Flex>
+      </Box>
+
+      <Box fontSize="xl" fontWeight="bold" marginTop="6" color="gray.500">
+        <Text>Mobile: {mobile}</Text>
+        <Text>Phone: {phone}</Text>
+        <Text>Whastapp: {whatsapp}</Text>
+        <Text>Contact Name: {contactName}</Text>
       </Box>
     </Box>
   </Box>
