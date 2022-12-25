@@ -9,7 +9,7 @@ import noresult from "../assets/notfound.svg";
 import { fetchApi } from "../utils/fetchApi";
 import { baseUrl } from "../utils/fetchApi";
 
-const search = ({ properties }) => {
+const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
   return (
@@ -73,4 +73,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default search;
+export default Search;
